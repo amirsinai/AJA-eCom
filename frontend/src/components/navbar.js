@@ -4,10 +4,11 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import TPLogo from "../img/LogoTP.png"
 
 function Bar() {
   return (
-    <Navbar bg="dark" expand="lg">
+    <Navbar bg="dark" expand="lg" class="Navi">
       <Container fluid>
         {/* <img
             alt= "pumpkin"
@@ -16,7 +17,16 @@ function Bar() {
             height="30"
             className="d-inline-block align-top"
         />{' '} */}
-        <Navbar.Brand href="#">eCommerce-Website</Navbar.Brand>
+        <Navbar.Brand href="#">
+        <img
+            alt= "pumpkin"
+            src={TPLogo}
+            width="60px"
+            height="50px"
+            className="d-inline-block align-top"
+        />
+          eCommerce-Website
+          </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
