@@ -1,6 +1,11 @@
+
 body {
-  height: 2000px;
-  margin: 0;
+  /* border: 4px solid red; */
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  margin: 0px;
+  overflow: overlay;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -8,14 +13,38 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.Navi {
-  overflow-y: scroll;
+main {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+  max-width: 1528px;
+  background-color: #282c34;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  background-color: grey;
+  height: 105vh;
+  text-align: center;
+  color: aliceblue;
 }
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                       Scrollbar
@@ -23,14 +52,13 @@ code {
 
 body::-webkit-scrollbar{
   width: 0.4rem;
-  height: 50rem;
-  z-index: -1;
+  height: 0.7rem
 }
 body::-webkit-scrollbar-track{
-  background: #28282b;
+  background-color: transparent;
 }
 body::-webkit-scrollbar-thumb{
-  background: #FF9A00
+  background-image: linear-gradient(220deg, #d0368a 0%, #FF9A00 99%);
+  border-radius: 5px;
 }
-
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
