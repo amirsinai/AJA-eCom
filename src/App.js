@@ -4,7 +4,7 @@ import './App.css';
 import Home from './components/home';
 import Test from './components/test'
 import Bar from './components/navbar.js';
-import Slide from './components/slider.js';
+import Slider from './components/slider.jsx';
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <div className="display">
         <Bar />
-        <Slide />
+        <Slider />
         <main>
             <Routes>
               <Route path="/" element={<Home />} />
