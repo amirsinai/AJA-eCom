@@ -6,6 +6,7 @@ import Test from './components/test'
 import Bar from './components/navbar.js';
 import Slider from './components/slider.jsx';
 import Newsletter from './components/newsletter.jsx';
+import Footer from './components/footer.jsx';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             </Routes>
         </main>
         <Newsletter />
+        <Footer />
       </div>
     </div>
     </Router>
