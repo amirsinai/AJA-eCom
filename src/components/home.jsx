@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useState } from "react";
 //import SlideImg from "../img/slideImg.png";
 import { sliderItems } from "../data";
+import newsletter from "./newsletter";
 
 //Using Styled Components to make the styling for the slider.
 const Container = styled.div`
@@ -90,6 +91,8 @@ const Slider = () => {
     };
 
   return (
+    <div>
+    <div>
     <Container>
         <Arrow direction="left" onClick={() => handleClick("left")}>
             <KeyboardArrowLeftOutlined/>
@@ -112,6 +115,9 @@ const Slider = () => {
             <KeyboardArrowRightOutlined/>
         </Arrow>
     </Container>
+
+    </div><div></div>
+    </div>
   );
 };
 

@@ -4,8 +4,6 @@ import './App.css';
 import Home from './components/home';
 import Test from './components/test'
 import Bar from './components/navbar.js';
-import Slider from './components/slider.jsx';
-import Newsletter from './components/newsletter.jsx';
 import Footer from './components/footer.jsx';
 
 function App() {
@@ -14,14 +12,12 @@ function App() {
     <div className="App">
       <div className="display">
         <Bar />
-        <Slider />
         <main>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/test" element={<Test />} />
             </Routes>
         </main>
-        <Newsletter />
         <Footer />
       </div>
     </div>
