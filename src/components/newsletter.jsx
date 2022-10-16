@@ -13,13 +13,13 @@ export const newsletter = () => {
   return (
     <Container>
         <Title>Newsletter</Title>
-        <Desc></Desc>
+        <Desc>Get updates from your favorite products for this Halloween Season!</Desc>
         <InputContainer>
-            <Input/>
+            <Input placeholder="Your email"/>
             <Button>
                 <SendIcon/>
             </Button>
         </InputContainer>
     </Container>
-  )
-}
+  );
+};
