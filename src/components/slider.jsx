@@ -1,6 +1,7 @@
-import { KeyboardArrowLeftOutlined, KeyboardArrowRightOutlined } from "@mui/icons-material"
-import styled from "styled-components"
-import SlideImg from "../img/slideImg.png"
+import { KeyboardArrowLeftOutlined, KeyboardArrowRightOutlined } from "@mui/icons-material";
+import styled from "styled-components";
+import { useState } from "react";
+//import SlideImg from "../img/slideImg.png";
 import { sliderItems } from "../data";
 
 const Container = styled.div`
@@ -24,8 +25,8 @@ const Arrow = styled.div`
   bottom: 0;
   //This is to allow the Left Arrow and the right Arrow to not be on top of each other. This will allow them to be seperated.
   //Makes a condtion to allow different placement for the left and right arrow.
-  left: ${props=> props.direction === "left" && '10px'};
-  right: ${props=> props.direction === "right" && '10px'};
+  left: ${(props) => props.direction === "left" && '10px'};
+  right: ${(props) => props.direction === "right" && '10px'};
   margin: auto;
   cursor: pointer;
   opacity: 0.5;
@@ -36,7 +37,7 @@ const Wrapper = styled.div`
   height: 100%;
   display: flex;
   transition: all 1.5s ease;
-  transform: tramslateX(${(props) => props.slideIndex * -100}vw);
+  transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
 const Slide = styled.div`
@@ -44,7 +45,7 @@ const Slide = styled.div`
   height 100vh;
   display: flex;
   align-items: center;
-  background-color: #${props=>props.bg};
+  background-color: #${(props) => props.bg};
 `;
 
 const ImgContainer = styled.div`
@@ -53,7 +54,7 @@ const ImgContainer = styled.div`
 `;
 
 const Image = styled.img`
-  height="80%"
+  height="80%";
 `
 
 const InfoContainer = styled.div`
@@ -68,7 +69,7 @@ const Desc = styled.p`
   margin: 50px 0px;
   font-size: 20px;
   font-weight: 500;
-  letter-spacing: 3px
+  letter-spacing: 3px;
 `
 const Button = styled.button`
   padding: 10px;
@@ -78,22 +79,22 @@ const Button = styled.button`
 `
 
 const Slider = () => {
-  const [slideIndex, setSlideIndex] = useState(0);
+    const [slideIndex, setSlideIndex] = useState(0);
     const handleClick = (direction) => {
-      if(direction==="left"){
-        setSlideIndex(slideIndex > 0 ? slideIndex-1 : 1);
+      if (direction === "left") {
+        setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
       } else{
-        setSlideIndex(slideIndex < 1 ? slideIndex +1 : 0);
+        setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
       }
     };
 
   return (
     <Container>
-        <Arrow direction='left' onClick={()=>handleClick("left")}>
+        <Arrow direction="left" onClick={() => handleClick("left")}>
             <KeyboardArrowLeftOutlined/>
         </Arrow>
         <Wrapper slideIndex={slideIndex}>
-          {sliderItems.map(item=>(
+          {sliderItems.map((item) => (
               <Slide bg={item.bg}>//This is to change the color once we figure that out all the information can be changed from data.js"
             <ImgContainer>
               <Image src={item.img}/>
@@ -106,11 +107,11 @@ const Slider = () => {
               </Slide>
           ))}    
         </Wrapper>
-        <Arrow direction="right" onClick={()=>handleClick("right")}>
+        <Arrow direction="right" onClick={() => handleClick("right")}>
             <KeyboardArrowRightOutlined/>
         </Arrow>
     </Container>
   );
-}
+};
 
-export default Slider
+export default Slider;
