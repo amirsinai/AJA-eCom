@@ -4,6 +4,7 @@ import { useState } from "react";
 //import SlideImg from "../img/slideImg.png";
 import { sliderItems } from "../data";
 
+//Using Styled Components to make the styling for the slider.
 const Container = styled.div`
   width: 100%;
   height: 100vh;

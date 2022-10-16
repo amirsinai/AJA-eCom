@@ -6,7 +6,6 @@ import Test from './components/test'
 import Bar from './components/navbar.js';
 import Slider from './components/slider.jsx';
 
-
 function App() {
   return (
     <Router>
