@@ -1,6 +1,7 @@
 import React from "react";
-import { Facebook, Instagram, Pinterest, Twitter } from "@mui/icons-material";
+import { Facebook, Instagram, Pinterest, Twitter, Room, Phone, MailOutline } from "@mui/icons-material";
 import styled from "styled-components";
+import TPLogo from "../img/tabLogo.png"
 
 const Container = styled.div`
   display: flex;
@@ -14,7 +15,6 @@ const Left = styled.div`
 `;
 
 const Logo = styled.h1`
-
 `;
 
 const Desc = styled.p`
@@ -43,15 +43,51 @@ const Center = styled.div`
   padding: 20px;
 `;
 
+const Title = styled.h3`
+  margin-bottom: 30px;
+`;
+
+const List = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const ListItem = styled.li`
+  width: 50%;
+  margin-bottom: 10px;
+`;
+
 const Right = styled.div`
   flex: 1;
+  padding: 20px;
+`;
+
+const ContactItem = styled.div`
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+`;
+
+const Payment = styled.img`
+  width: 50%;
 `;
 
 const Footer = () => {
   return (
     <Container>
       <Left>
-      <Logo>AJA</Logo>
+      <Logo>
+      <img
+        alt= "Logo"
+        src={TPLogo}
+        width="60px"
+        height="50px"
+        className="d-inline-block align-left"
+          />
+      </Logo>
       <Desc>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. In nisl nisi
@@ -74,8 +110,34 @@ const Footer = () => {
         </SocialIcon>
       </SocialContainer>
       </Left>
-      <Center></Center>
-      <Right></Right>
+      <Center>
+        <Title>Useful Links</Title>
+        <List>
+        <ListItem>Home</ListItem>
+          <ListItem>Cart</ListItem>
+          <ListItem>Sale</ListItem>
+          <ListItem>Costumes</ListItem>
+          <ListItem>Masks</ListItem>
+          <ListItem>Accessories</ListItem>
+          <ListItem>My Account</ListItem>
+          <ListItem>Order Tracking</ListItem>
+          <ListItem>Wishlist</ListItem>
+          <ListItem>Terms</ListItem>
+        </List>
+      </Center>
+      <Right>
+        <Title>Contact</Title>
+        <ContactItem>
+          <Room style={{marginRight:"10px"}}/> 622 Dixie Path , South Tobinchester 98336
+        </ContactItem>
+        <ContactItem>
+          <Phone style={{marginRight:"10px"}}/> +1 234 56 78
+        </ContactItem>
+        <ContactItem>
+          <MailOutline style={{marginRight:"10px"}} /> contact@lama.dev
+        </ContactItem>
+        <Payment src='https://i.ibb.co/Qfvn4z6/payment.png' />
+      </Right>
     </Container>
   );
 };
