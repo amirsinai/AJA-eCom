@@ -5,6 +5,7 @@ import Home from './components/home';
 import Test from './components/test'
 import Bar from './components/navbar.js';
 import Slider from './components/slider.jsx';
+import Newsletter from './components/newsletter.jsx';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
               <Route path="/test" element={<Test />} />
             </Routes>
         </main>
+        <Newsletter />
       </div>
     </div>
     </Router>
