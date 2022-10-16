@@ -95,7 +95,7 @@ const Slider = () => {
         </Arrow>
         <Wrapper slideIndex={slideIndex}>
           {sliderItems.map((item) => (
-              <Slide bg={item.bg}>//This is to change the color once we figure that out all the information can be changed from data.js"
+              <Slide bg={item.bg}>
             <ImgContainer>
               <Image src={item.img}/>
             </ImgContainer>
