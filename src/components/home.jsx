@@ -4,6 +4,7 @@ import { useState } from "react";
 //import SlideImg from "../img/slideImg.png";
 import { sliderItems } from "../data";
 import newsletter from "./newsletter";
+import Newsletter from "./newsletter";
 
 //Using Styled Components to make the styling for the slider.
 const Container = styled.div`
@@ -115,8 +116,10 @@ const Slider = () => {
             <KeyboardArrowRightOutlined/>
         </Arrow>
     </Container>
-
-    </div><div></div>
+    </div>
+    <div>
+      <Newsletter/>
+    </div>
     </div>
   );
 };
