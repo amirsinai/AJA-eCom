@@ -9,7 +9,7 @@ export default function Test(){
         const fetchData = async() => {
             const response = await fetch(SearchEndPoint)
             const resData = await response.json()
-            setTestData(resData.items)
+            setTestData(resData.Items)
         }
         fetchData()
     }, [])
@@ -19,7 +19,7 @@ export default function Test(){
     const TestDataMapping = testData.map((item, index) =>{
         return(
             <div className="CardHolder" key={index}>
-                {/* <Card bg="dark" style={{ width: '18rem' }}>
+                <Card bg="dark" style={{ width: '18rem' }}>
                     <Card.Img variant="top" src={item.Image}/>
                     <Card.Body>
                         <Card.Title>{item.ItemName}</Card.Title>
@@ -29,7 +29,7 @@ export default function Test(){
                         </Card.Text>
                         <Button variant="primary">Go somewhere</Button>
                     </Card.Body>
-                </Card> */}
+                </Card>
             </div>
         )
     })
