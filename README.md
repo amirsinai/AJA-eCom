@@ -1,7 +1,25 @@
-# eCommerce-Website-MSP3
 # Project Description
-# AJA ecomm project
-This project will be a eCommerce website that will let you add things to your cart and also to your wishlist as well. We will be trying to make it like a clone of Amazon. There will be signin to be able to get the items that you added into your cart. 
-Languages: HTML, CSS, JavaScript
+AJA-eCommerce. An 11 day project created by 3 junior developers. AJA is a simple eCommerce website that is created to showcase our web-development skills. The website is developed using react components along with Amazon Web Services. Currently our website is still on development, and once it is ready, you will be able to create an account and add items to your cart, give reviews, and enjoy the website.
 
-Components: Node, React, Express,  and etc...
+
+**Amazon Services Used:**
+- Deployment:          AWS Amplify
+- Database:            DynamoDB
+- BackEndServer:       Lambda/API Gateway
+- UserAuthorization:   Cognito
+
+**Other Services**
+- API/JSON reader:     jsonviewer.stack.hu
+- Communications:      Discord.com
+
+## Development Experience
+
+
+"Lorem Ipsum ~"
+        -Angelo
+
+"Lorem Ipsum ~"
+        -Johnathan
+
+"Lorem Ipsum ~"
+        -Amir
