@@ -1,0 +1,7 @@
+{
+    "AppSyncApiName": "AJAeCom",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "S3DeploymentBucket": "amplify-amplify5902924e08374-staging-172818-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/02a8b809cb6c5df4a0e65cab0cdd440f97405e62"
+}
