@@ -23,11 +23,13 @@ const ProductList = () => {
     console.log(testData)
 
         return(
+            <div>
             <Container>
                 {testData.map((item, index) => (
                     <Product item={item.ItemName} key={index} />
                 ))}
             </Container>
+            </div>
         )
     }
 
