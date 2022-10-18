@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { useState } from "react";
 //import SlideImg from "../img/slideImg.png";
 import { sliderItems } from "../data";
-import newsletter from "./newsletter";
 import Newsletter from "./newsletter";
 
 //Using Styled Components to make the styling for the slider.
