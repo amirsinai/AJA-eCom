@@ -8,7 +8,8 @@ import Home from './components/home';
 import Test from './components/test'
 import Bar from './components/navbar.js';
 import Footer from './components/footer.jsx';
-import AuthenticationPage from "./components/account"
+import CreateUser from "./components/user/userComponents/createUser"
+import LoginUser from "./components/user/userComponents/loginUser"
 
 
 Amplify.configure(awsconfig)
@@ -24,7 +25,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/test" element={<Test />} />
-              <Route path="/Account" element={<AuthenticationPage />} />
+              <Route path="/createUser" element={<CreateUser />} />
+              <Route path='/login' element={<LoginUser/>} />
             </Routes>
         </main>
         <Footer />

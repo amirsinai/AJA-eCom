@@ -14,12 +14,20 @@ export default function loginUser(){
     function onChange(e) {
       formInputState = { ...formInputState, [e.target.name]: e.target.value };
     }
+
+    function checkUser(){
+        console.log("Activated")
+        Auth.currentAuthenticatedUser({
+            bypassCache: false  // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
+        }).then(user => console.log(user))
+        .catch(err => console.log(err));
+    }
   
     return(
         <div>
             <Form>
                  <div>
-                    <h2>Welcome to the AJA-ecommerce!</h2>
+                    <h2>Log-in to AJA-ecommerce</h2>
                 </div>
                 <div>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -36,6 +44,7 @@ export default function loginUser(){
                         Login
                     </Button>
                 </div>
+                <Button onClick={checkUser()}>Check currentUser</Button>
             </Form>
         </div>
     )
