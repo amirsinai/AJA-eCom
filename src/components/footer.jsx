@@ -5,6 +5,7 @@ import TPLogo from "../img/tabLogo.png"
 
 const Container = styled.div`
   display: flex;
+  background-color: #000000
 `;
 
 const Left = styled.div`
