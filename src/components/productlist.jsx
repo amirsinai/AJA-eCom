@@ -21,12 +21,12 @@ const ProductList = () => {
     }, [])
 
     console.log(testData)
-
+      if(!testData){return <div>no data</div>}
         return(
             <div>
             <Container>
                 {testData.map((item, index) => (
-                    <Product item={item.ItemName} key={index} />
+                    <Product item={item} key={index} />
                 ))}
             </Container>
             </div>
