@@ -68,6 +68,7 @@ const productstyling = ({item, index}) => {
             </Icon>
         </Info>
     </Container>
+    <a href={`/${item.id}`}>{item.Name}</a>
     </div>
   )
 }
