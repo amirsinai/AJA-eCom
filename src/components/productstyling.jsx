@@ -57,7 +57,7 @@ const productstyling = ({item, index}) => {
     <Container>
         <Image src={item.Image}/>
         <Info>
-            <Icon container direction="row">
+            <Icon>
                 <ShoppingCartOutlined/>
             </Icon>
             <Icon>
