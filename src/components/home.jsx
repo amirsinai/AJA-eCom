@@ -4,6 +4,7 @@ import { useState } from "react";
 //import SlideImg from "../img/slideImg.png";
 import { sliderItems } from "../data";
 import Newsletter from "./newsletter";
+import Nav from 'react-bootstrap/Nav';
 
 //Using Styled Components to make the styling for the slider.
 const Container = styled.div`
@@ -106,7 +107,9 @@ const Slider = () => {
             <InfoContainer>
               <Title>{item.title}</Title>
               <Desc>{item.desc}</Desc>
-              <Button>Shop Now</Button>            
+              <Nav.Link href="/products">
+              <Button>Shop Now</Button>
+              </Nav.Link>            
             </InfoContainer>
               </Slide>
           ))}    
