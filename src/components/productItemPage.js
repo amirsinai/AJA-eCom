@@ -1,6 +1,7 @@
 import { useState, useEffect} from "react"
 import { useParams } from "react-router-dom"
 import {Button, Card} from "react-bootstrap"
+import styled from "styled-components"
 
 export default function ProductItem(){
     const { id } = useParams()
@@ -17,14 +18,14 @@ export default function ProductItem(){
     }, [])
 
     return(
-        <div className="CardHolder">
+        <div>
             <img  src={productData.Image} alt={productData.itemName}/>
             <h2>
                 {productData.itemName}
             </h2>
             <p>Description: {productData.Desc}</p>
             <p>Price: {productData.Price}</p>
-            <a href="#"><Button variant="primary">Add to Wishlist</Button></a>
+            <a href="#"><Button variant="primary">Add to Wishlist</Button></a> 
         </div>
     )
 }
