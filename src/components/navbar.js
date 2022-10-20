@@ -4,6 +4,8 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import TPLogo from "../img/tabLogo.png"
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import IconButton from '@mui/material/IconButton';
 
 export default function Bar() {
   return (
@@ -27,10 +29,13 @@ export default function Bar() {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Nav.Link href="#action1" className="color-nav">Home</Nav.Link>
-              <Nav.Link href="#action2" className="color-nav">Link</Nav.Link>
+              <Nav.Link href="/" className="color-nav">Home</Nav.Link>
+              <Nav.Link href="/products" className="color-nav">Catalogue</Nav.Link>
             </Nav>
             <Form className="d-flex">
+              <IconButton color="primary" aria-label="add to shopping cart">
+                <ShoppingCartIcon />
+                </IconButton>
               <Form.Control
                 type="search"
                 placeholder="Search"
