@@ -1,64 +1,85 @@
-// import styled from "styled-components"
+import styled from "styled-components"
+import { useState, useEffect} from "react"
+import { useParams } from "react-router-dom"
 
-// const Container = styled`
+const Container = styled.div``;
+const Wrapper = styled.section`
+    padding: 50px;
+    display: flex;
+`;
 
-// `;
-// const Wrapper = styled`
+const ImgContainer = styled.div`
+    flex: 1;
+`;
 
-// `;
-// const ImgContainer = styled``;
-// const Image = styled``;
-// const InfoContainer = styled``;
-// const Title = styled``;
-// const Desc = styled``;
-// const Price = styled``;
-// const AddContainer = styled``;
-// const AmountContainer = styled``;
-// const Remove = styled``;
-// const Amount = styled``;
-// const Add = styled``;
-// const Button = styled``;
+const Image = styled.img`
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+`;
 
-// const productItemPagestyling = () => {
-//     const { id } = useParams()
-//     const[ productData, setProductData] = useState([])
+const InfoContainer = styled.div`
+    flex: 1;
+    padding: 0px 50px;
+`;
 
-//     useEffect(() => {
-//         const SearchEndPoint = `https://qndk0sl6mi.execute-api.us-west-2.amazonaws.com/items/${id}`
-//         const fetchData = async() => {
-//             const response = await fetch(SearchEndPoint)
-//             const resData = await response.json()
-//             setProductData(resData.Item)
-//         }
-//         fetchData()
-//     }, [])
+const Title = styled.div`
+    font-weight: 200;
+`;
 
-//   return (
-//     <div key={index}>
-//         <Container>
-//             <Wrapper>
-//                 <ImgContainer>
-//                     <Image src={item.Image}/>
-//                 </ImgContainer>
-//                 <InfoContainer>
-//                     <Title></Title>
-//                     <Desc>
+const Desc = styled.div`
+    margin: 20px 0px;
+`;
 
-//                     </Desc>
-//                     <Price>{productData.Price}</Price>
-//                     <AddContainer>
-//                         <AmountContainer>
-//                             <Remove/>
-//                             <Amount>1</Amount>
-//                             <Add />
-//                         </AmountContainer>
-//                         <Button>ADD TO WISHLIST</Button>
-//                     </AddContainer>
-//                 </InfoContainer>
-//             </Wrapper>
-//         </Container>
-//     </div>
-//   )
-// }
+const Price = styled.div`
+    font-weight: 100;
+    font-size: 40px;
+`;
+const AddContainer = styled.div``;
+const AmountContainer = styled.div``;
+const Remove = styled.div``;
+const Amount = styled.div``;
+const Add = styled.div``;
+const Button = styled.button``;
 
-// export default productItemPagestyling;
+const ProductItemPagestyling = () => {
+    const { id } = useParams()
+    const[ productData, setProductData] = useState([])
+
+    useEffect(() => {
+        const SearchEndPoint = `https://qndk0sl6mi.execute-api.us-west-2.amazonaws.com/items/${id}`
+        const fetchData = async() => {
+            const response = await fetch(SearchEndPoint)
+            const resData = await response.json()
+            setProductData(resData.Item)
+        }
+        fetchData()
+    }, [])
+
+  return (
+    <div>
+        <Container>
+            <Wrapper>
+                <ImgContainer>
+                    <Image src={productData.Image}/>
+                </ImgContainer>
+                <InfoContainer>
+                    <Title>{productData.Name}</Title>
+                    <Desc>{productData.Desc}</Desc>
+                    <Price>${productData.Price}</Price>
+                    <AddContainer>
+                        <AmountContainer>
+                            <Remove/>
+                            <Amount>1</Amount>
+                            <Add />
+                        </AmountContainer>
+                        <Button>ADD TO WISHLIST</Button>
+                    </AddContainer>
+                </InfoContainer>
+            </Wrapper>
+        </Container>
+    </div>
+  )
+}
+
+export default ProductItemPagestyling;
