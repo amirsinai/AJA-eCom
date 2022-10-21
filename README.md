@@ -6,6 +6,10 @@ AJA-eCommerce is a project created by 3 junior developers, and the website is cr
 
 Throughout our project, we have challenged ourselves to use components beyond our experiences, this includes; Working with services such AWS, REST-API , serverless functions, creating APIs by linking through Lambda then DynamoDB, styling websites with MUI, Styled, Bootstrap, and many more!
 
+AJA website welcomes user with a season ralated graphical slider and takes users to shopping page when reated button is clicked.
+
+The shopping page shows products images and title, on hover, product can be added to shopping bag, added to wishlist or looked up for details.
+
 ****Amazon Services Used:****
 
 - Deployment : AWS Amplify
