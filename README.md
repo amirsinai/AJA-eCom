@@ -25,7 +25,3 @@ __**Other Services**__
 
 >"Lorem Ipsum ~"
         -Amir
-
-## Issues
-
-- Need more time
