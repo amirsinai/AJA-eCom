@@ -21,7 +21,7 @@ export default function Bar() {
               className="d-inline-block align-top"
           />
             </Navbar.Brand>
-            <Navbar.Brand>eCommerce-Website</Navbar.Brand>
+            <Navbar.Brand style={{color: "#d2d6d3"}}>eCommerce-Website</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -29,8 +29,8 @@ export default function Bar() {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Nav.Link href="/" className="color-nav">Home</Nav.Link>
-              <Nav.Link href="/products" className="color-nav">Catalogue</Nav.Link>
+              <Nav.Link href="/" className="color-nav" style={{color: "#d2d6d3"}}>Home</Nav.Link>
+              <Nav.Link href="/products" className="color-nav" style={{color: "#d2d6d3"}}>Catalogue</Nav.Link>
             </Nav>
             <Form className="d-flex">
               <IconButton color="primary" aria-label="add to shopping cart">
