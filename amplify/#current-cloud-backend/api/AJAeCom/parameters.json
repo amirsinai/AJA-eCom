@@ -1,5 +1,6 @@
 {
   "AppSyncApiName": "AJAeCom",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2022-10-19T11:16:24.015Z"
 }

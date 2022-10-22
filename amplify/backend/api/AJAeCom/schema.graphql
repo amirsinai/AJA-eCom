@@ -1,8 +1,16 @@
+type Reviews @model @auth(rules: [{allow: public, operations: [create, update, read]}]) {
+  id: ID!
+  productsID: ID! @index(name: "byProducts")
+  Rating: Float!
+  Comment: String
+}
+
 type Products @model @auth(rules: [{allow: public}]) {
   id: ID!
   Name: String!
   Desc: String!
   Image: String
   Price: Float!
+  Reviews: [Reviews] @hasMany(indexName: "byProducts", fields: ["id"])
 }
  

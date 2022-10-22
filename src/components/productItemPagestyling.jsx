@@ -1,8 +1,13 @@
 import styled from "styled-components"
+
 import { useState, useEffect} from "react"
 import { useParams } from "react-router-dom"
 import Newsletter from "./newsletter.jsx"
 import { Add, Remove } from "@mui/icons-material"
+import {Products} from "../models"
+import { DataStore } from "aws-amplify"
+import CreateReview from "./item-page/createReview"
+import ReviewResults from "./item-page/reviewResults"
 
 const Container = styled.div`
     
@@ -94,15 +99,13 @@ const ProductItemPagestyling = () => {
     const[ productData, setProductData] = useState([])
 
     useEffect(() => {
-        const SearchEndPoint = `https://qndk0sl6mi.execute-api.us-west-2.amazonaws.com/items/${id}`
         const fetchData = async() => {
-            const response = await fetch(SearchEndPoint)
-            const resData = await response.json()
-            setProductData(resData.Item)
+            const products = await DataStore.query(Products, id)
+            setProductData(products)
         }
         fetchData()
     }, [])
-
+    
     const [quantity, setQuantity] = useState(1);
 
     const handleQuantity = (type) =>{
@@ -112,7 +115,7 @@ const ProductItemPagestyling = () => {
             setQuantity(quantity + 1);
         }
     };
-
+    
   return (
     <div>
         <Container>
@@ -136,6 +139,11 @@ const ProductItemPagestyling = () => {
             </Wrapper>
             <Newsletter />
         </Container>
+        <div>
+            <h2>Reviews</h2>
+            <CreateReview value={productData.id}/>
+            <ReviewResults value={productData.id}/>
+        </div>
     </div>
   )
 }
