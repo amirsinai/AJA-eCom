@@ -1,43 +1,60 @@
 import { Button, Form } from "react-bootstrap"
+import { DataStore } from "aws-amplify";
+import {  useState } from "react";
+import { useParams } from "react-router-dom";
+
+import { Reviews } from "../../models"
 
 export default function CreateReview(){
+    const { id } = useParams()
+    let [formData, setFormData] = useState({ Rating: 0, Comment: "", productsID: `${id}`})
+    let [stateCheck, setStateCheck] = useState(false)
 
-    let formInputState = { review: 0, comment: '', verificationCode: '' };
-
-    function onChange(e) {
-        formInputState = { ...formInputState, [e.target.name]: e.target.value };
-      }
-
-    function postResult(){
-        
+    async function createComment(){
+        await DataStore.save(
+            new Reviews(formData)
+        )
+        console.log("Successfully created post")
+        setStateCheck(true)
+            this.preventDefault()
     }
 
-    
-
-    const postStage = (e, term) =>{
+    const handleSubmit = e => {
         e.preventDefault()
+        console.log(formData)
+        createComment()
     }
 
-
+    const handleMore = e =>{
+        e.preventDefault()
+        setStateCheck(false)
+    }
 
     return(
         <div>
-            <Form action={postStage()}>
-                <h1>Sign Up</h1>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="number" placeholder="Enter email" name="review" onChange={onChange}/>
+            {stateCheck ?
+            <div>
+                <h3>You have Successfully created a post</h3>
+                <button onSubmit={handleMore}>Create another one?</button>
+            </div>
+            :
+            <Form onSubmit={handleSubmit}>
+                <h3>Add your own Review</h3>
+                <Form.Group className="mb-3">
+                    <Form.Label>Rating</Form.Label>
+                    <Form.Control required type="number" placeholder="1-5" name="Rating" max="5" min="0" onChange={e => setFormData({ ...formData, 'Rating': parseInt(e.target.value)})}/>
                     <Form.Text className="text-muted">
                     </Form.Text>
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="text" placeholder="Password" name="comment" onChange={onChange}/>
+                <Form.Group className="mb-3">
+                    <Form.Label>Comment</Form.Label>
+                    <Form.Control type="text" placeholder="Comments" name="Comment" max="555" onChange={e => setFormData({ ...formData, 'Comment': e.target.value}, )}/>
                 </Form.Group>
                 <Button variant="primary" type="submit">
-                    Create Account
+                    Post Review
                 </Button>
             </Form>
+            }
         </div>
     )
 };

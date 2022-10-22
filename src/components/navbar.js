@@ -21,7 +21,7 @@ export default function Bar() {
               className="d-inline-block align-top"
           />
             </Navbar.Brand>
-            <Navbar.Brand style={{color: 'linear-gradient(220deg, #d0368a 0%, #FF9A00 22%)'}}>eCommerce-Website</Navbar.Brand>
+            <Navbar.Brand style={{color: '#d2d6d3'}}>eCommerce-Website</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav

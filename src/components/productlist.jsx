@@ -1,6 +1,9 @@
 import styled from "styled-components"
 import { useState, useEffect } from "react"
+import { DataStore } from "aws-amplify";
 import Product from "./productstyling";
+import {Products} from "../models"
+
 
 const Container = styled.div`
     padding: 20px;
@@ -13,11 +16,9 @@ const ProductList = () => {
     const[testData, setTestData] = useState([])
 
     useEffect(() => {
-        const SearchEndPoint = `https://qndk0sl6mi.execute-api.us-west-2.amazonaws.com/items`
         const fetchData = async() => {
-            const response = await fetch(SearchEndPoint)
-            const resData = await response.json()
-            setTestData(resData.Items)
+            const products = await DataStore.query(Products)
+            setTestData(products)
         }
         fetchData()
     }, [])
