@@ -32,7 +32,7 @@ The shopping page shows products images and title, on hover, product can be adde
 
 
         -Jonathan"
- "Lorem Ipsum ~"
+ "This project was an amazing experience to get for the final project that we will be doing in this bootcamp. In our group we have learned a lot through out the bootcamp and we put what we learned into this. I was in charge for most of the front-end of the website. I was using React Bootstrap, MUI, and I learned a new component being Styled-Components. Styled-Components is a react components which make it to be able to seperatly make the styling for each component that I was doing. In their documentation it states that this also loads the least amount of code for the end users. These were all using different styling and what I enjoy is that you don't have to look through your CSS for the right styling that is used for each componenet. They are all seperate from each other which makes it nice. I barely started learning it but hopefully I can start learning more about it because I truly enjoyed using it."
 
         -Amir
  "learning to work with AWS is existing, I was in charge of creating and setting up the main github repo and AWS account, added the model tables, contents(products, images, links) and relationship, created the graphical logo AJA (Angelo, Jonathan, Amir) and working on search bar to return products based on keyword or a product name"
