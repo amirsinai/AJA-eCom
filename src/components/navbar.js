@@ -33,9 +33,11 @@ export default function Bar() {
               <Nav.Link href="/products" className="color-nav" style={{color: "#d2d6d3"}}>Catalogue</Nav.Link>
             </Nav>
             <Form className="d-flex">
-              <IconButton color="primary" aria-label="add to shopping cart">
+              <a href='/wishlist'>
+               <IconButton color="primary" aria-label="add to shopping cart">
                 <ShoppingCartIcon />
                 </IconButton>
+                </a>
               <Form.Control
                 type="search"
                 placeholder="Search"

@@ -26,7 +26,6 @@ export default function CreateReview(){
     }
 
     const handleMore = e =>{
-        e.preventDefault()
         setStateCheck(false)
     }
 
@@ -36,6 +35,7 @@ export default function CreateReview(){
             <div>
                 <h3>You have Successfully created a post</h3>
                 <button onSubmit={handleMore}>Create another one?</button>
+                <p>Refresh the page to see your comment or click <a href={`./${id}`}>here</a></p>
             </div>
             :
             <Form onSubmit={handleSubmit}>
@@ -48,7 +48,7 @@ export default function CreateReview(){
                 </Form.Group>
                 <Form.Group className="mb-3">
                     <Form.Label>Comment</Form.Label>
-                    <Form.Control type="text" placeholder="Comments" name="Comment" max="555" onChange={e => setFormData({ ...formData, 'Comment': e.target.value}, )}/>
+                    <Form.Control type="text" placeholder="Add your comment?" name="Comment" max="555" onChange={e => setFormData({ ...formData, 'Comment': e.target.value}, )}/>
                 </Form.Group>
                 <Button variant="primary" type="submit">
                     Post Review

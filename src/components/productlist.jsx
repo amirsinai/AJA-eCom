@@ -1,8 +1,8 @@
 import styled from "styled-components"
 import { useState, useEffect } from "react"
-import { DataStore } from "aws-amplify";
+// import { DataStore } from "aws-amplify";
 import Product from "./productstyling";
-import {Products} from "../models"
+// import { Products } from "../models"
 
 
 const Container = styled.div`
@@ -13,27 +13,38 @@ const Container = styled.div`
 `
 
 const ProductList = () => {
-    const[testData, setTestData] = useState([])
+    const [fetchData, setFetchData] = useState([])
 
     useEffect(() => {
+        const SearchEndPoint = `https://qndk0sl6mi.execute-api.us-west-2.amazonaws.com/items`
         const fetchData = async() => {
-            const products = await DataStore.query(Products)
-            setTestData(products)
+            const response = await fetch(SearchEndPoint)
+            const resData = await response.json()
+            setFetchData(resData.Items)
         }
         fetchData()
     }, [])
 
-    console.log(testData)
-      if(!testData){return <div>no data</div>}
-        return(
-            <div>
+    return fetchData.length === 0 ?
+        <div>no data</div>
+        :
+        <div>
             <Container>
-                {testData.map((item, index) => (
+                {fetchData.map((item, index) => (
                     <Product item={item} key={index} />
                 ))}
             </Container>
-            </div>
-        )
-    }
+        </div>
+    //   if(fetchData.length === 0){return <div>no data</div>}
+    //     return(
+    //         <div>
+    //         <Container>
+    //             {fetchData.map((item, index) => (
+    //                 <Product item={item} key={index} />
+    //             ))}
+    //         </Container>
+    //         </div>
+    //     )
+}
 
 export default ProductList

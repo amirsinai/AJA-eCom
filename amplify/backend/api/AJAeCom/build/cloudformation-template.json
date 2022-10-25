@@ -123,7 +123,7 @@
                     ]
                 },
                 "Description": "api key description",
-                "Expires": 1669024599
+                "Expires": 1669261838
             }
         },
         "GraphQLAPINONEDS95A13CF0": {
@@ -309,6 +309,82 @@
                 ]
             }
         },
+        "Wishlist": {
+            "Type": "AWS::CloudFormation::Stack",
+            "Properties": {
+                "TemplateURL": {
+                    "Fn::Join": [
+                        "",
+                        [
+                            "https://s3.",
+                            {
+                                "Ref": "AWS::Region"
+                            },
+                            ".",
+                            {
+                                "Ref": "AWS::URLSuffix"
+                            },
+                            "/",
+                            {
+                                "Ref": "S3DeploymentBucket"
+                            },
+                            "/",
+                            {
+                                "Ref": "S3DeploymentRootKey"
+                            },
+                            "/stacks/Wishlist.json"
+                        ]
+                    ]
+                },
+                "Parameters": {
+                    "DynamoDBModelTableReadIOPS": {
+                        "Ref": "DynamoDBModelTableReadIOPS"
+                    },
+                    "DynamoDBModelTableWriteIOPS": {
+                        "Ref": "DynamoDBModelTableWriteIOPS"
+                    },
+                    "DynamoDBBillingMode": {
+                        "Ref": "DynamoDBBillingMode"
+                    },
+                    "DynamoDBEnablePointInTimeRecovery": {
+                        "Ref": "DynamoDBEnablePointInTimeRecovery"
+                    },
+                    "DynamoDBEnableServerSideEncryption": {
+                        "Ref": "DynamoDBEnableServerSideEncryption"
+                    },
+                    "referencetotransformerrootstackenv10C5A902Ref": {
+                        "Ref": "env"
+                    },
+                    "referencetotransformerrootstackGraphQLAPI20497F53ApiId": {
+                        "Fn::GetAtt": [
+                            "GraphQLAPI",
+                            "ApiId"
+                        ]
+                    },
+                    "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name": {
+                        "Fn::GetAtt": [
+                            "GraphQLAPINONEDS95A13CF0",
+                            "Name"
+                        ]
+                    },
+                    "referencetotransformerrootstackS3DeploymentBucket7592718ARef": {
+                        "Ref": "S3DeploymentBucket"
+                    },
+                    "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
+                        "Ref": "S3DeploymentRootKey"
+                    },
+                    "referencetotransformerrootstackauthRoleNameFB872D50Ref": {
+                        "Ref": "authRoleName"
+                    },
+                    "referencetotransformerrootstackunauthRoleName49F3C1FERef": {
+                        "Ref": "unauthRoleName"
+                    }
+                }
+            },
+            "DependsOn": [
+                "GraphQLAPITransformerSchema3CB2AE18"
+            ]
+        },
         "Reviews": {
             "Type": "AWS::CloudFormation::Stack",
             "Properties": {
@@ -361,23 +437,59 @@
                             "ApiId"
                         ]
                     },
-                    "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name": {
-                        "Fn::GetAtt": [
-                            "GraphQLAPINONEDS95A13CF0",
-                            "Name"
-                        ]
-                    },
                     "referencetotransformerrootstackS3DeploymentBucket7592718ARef": {
                         "Ref": "S3DeploymentBucket"
                     },
                     "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
                         "Ref": "S3DeploymentRootKey"
                     },
+                    "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistQuerygetWishlistauth0FunctionQuerygetWishlistauth0FunctionAppSyncFunction43167F79FunctionId": {
+                        "Fn::GetAtt": [
+                            "Wishlist",
+                            "Outputs.transformerrootstackWishlistQuerygetWishlistauth0FunctionQuerygetWishlistauth0FunctionAppSyncFunction43167F79FunctionId"
+                        ]
+                    },
+                    "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistQuerygetWishlistpostAuth0FunctionQuerygetWishlistpostAuth0FunctionAppSyncFunction7E980D4EFunctionId": {
+                        "Fn::GetAtt": [
+                            "Wishlist",
+                            "Outputs.transformerrootstackWishlistQuerygetWishlistpostAuth0FunctionQuerygetWishlistpostAuth0FunctionAppSyncFunction7E980D4EFunctionId"
+                        ]
+                    },
                     "referencetotransformerrootstackauthRoleNameFB872D50Ref": {
                         "Ref": "authRoleName"
                     },
                     "referencetotransformerrootstackunauthRoleName49F3C1FERef": {
                         "Ref": "unauthRoleName"
+                    },
+                    "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistMutationcreateWishlistinit0FunctionMutationcreateWishlistinit0FunctionAppSyncFunction9B505D49FunctionId": {
+                        "Fn::GetAtt": [
+                            "Wishlist",
+                            "Outputs.transformerrootstackWishlistMutationcreateWishlistinit0FunctionMutationcreateWishlistinit0FunctionAppSyncFunction9B505D49FunctionId"
+                        ]
+                    },
+                    "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistMutationcreateWishlistauth0FunctionMutationcreateWishlistauth0FunctionAppSyncFunction51EC97B8FunctionId": {
+                        "Fn::GetAtt": [
+                            "Wishlist",
+                            "Outputs.transformerrootstackWishlistMutationcreateWishlistauth0FunctionMutationcreateWishlistauth0FunctionAppSyncFunction51EC97B8FunctionId"
+                        ]
+                    },
+                    "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistMutationupdateWishlistinit0FunctionMutationupdateWishlistinit0FunctionAppSyncFunction1485D4D6FunctionId": {
+                        "Fn::GetAtt": [
+                            "Wishlist",
+                            "Outputs.transformerrootstackWishlistMutationupdateWishlistinit0FunctionMutationupdateWishlistinit0FunctionAppSyncFunction1485D4D6FunctionId"
+                        ]
+                    },
+                    "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistSubscriptiononCreateWishlistauth0FunctionSubscriptiononCreateWishlistauth0FunctionAppSyncFunction41314B20FunctionId": {
+                        "Fn::GetAtt": [
+                            "Wishlist",
+                            "Outputs.transformerrootstackWishlistSubscriptiononCreateWishlistauth0FunctionSubscriptiononCreateWishlistauth0FunctionAppSyncFunction41314B20FunctionId"
+                        ]
+                    },
+                    "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistSubscriptionOnCreateWishlistDataResolverFnSubscriptionOnCreateWishlistDataResolverFnAppSyncFunctionDFBE86F5FunctionId": {
+                        "Fn::GetAtt": [
+                            "Wishlist",
+                            "Outputs.transformerrootstackWishlistSubscriptionOnCreateWishlistDataResolverFnSubscriptionOnCreateWishlistDataResolverFnAppSyncFunctionDFBE86F5FunctionId"
+                        ]
                     }
                 }
             },
@@ -443,16 +555,16 @@
                     "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
                         "Ref": "S3DeploymentRootKey"
                     },
-                    "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsQuerygetReviewsauth0FunctionQuerygetReviewsauth0FunctionAppSyncFunctionE100A44BFunctionId": {
+                    "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistQuerygetWishlistauth0FunctionQuerygetWishlistauth0FunctionAppSyncFunction43167F79FunctionId": {
                         "Fn::GetAtt": [
-                            "Reviews",
-                            "Outputs.transformerrootstackReviewsQuerygetReviewsauth0FunctionQuerygetReviewsauth0FunctionAppSyncFunctionE100A44BFunctionId"
+                            "Wishlist",
+                            "Outputs.transformerrootstackWishlistQuerygetWishlistauth0FunctionQuerygetWishlistauth0FunctionAppSyncFunction43167F79FunctionId"
                         ]
                     },
-                    "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsQuerygetReviewspostAuth0FunctionQuerygetReviewspostAuth0FunctionAppSyncFunction44C87776FunctionId": {
+                    "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistQuerygetWishlistpostAuth0FunctionQuerygetWishlistpostAuth0FunctionAppSyncFunction7E980D4EFunctionId": {
                         "Fn::GetAtt": [
-                            "Reviews",
-                            "Outputs.transformerrootstackReviewsQuerygetReviewspostAuth0FunctionQuerygetReviewspostAuth0FunctionAppSyncFunction44C87776FunctionId"
+                            "Wishlist",
+                            "Outputs.transformerrootstackWishlistQuerygetWishlistpostAuth0FunctionQuerygetWishlistpostAuth0FunctionAppSyncFunction7E980D4EFunctionId"
                         ]
                     },
                     "referencetotransformerrootstackauthRoleNameFB872D50Ref": {
@@ -461,34 +573,34 @@
                     "referencetotransformerrootstackunauthRoleName49F3C1FERef": {
                         "Ref": "unauthRoleName"
                     },
-                    "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsMutationcreateReviewsinit0FunctionMutationcreateReviewsinit0FunctionAppSyncFunction0F3B82B0FunctionId": {
+                    "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistMutationcreateWishlistinit0FunctionMutationcreateWishlistinit0FunctionAppSyncFunction9B505D49FunctionId": {
                         "Fn::GetAtt": [
-                            "Reviews",
-                            "Outputs.transformerrootstackReviewsMutationcreateReviewsinit0FunctionMutationcreateReviewsinit0FunctionAppSyncFunction0F3B82B0FunctionId"
+                            "Wishlist",
+                            "Outputs.transformerrootstackWishlistMutationcreateWishlistinit0FunctionMutationcreateWishlistinit0FunctionAppSyncFunction9B505D49FunctionId"
                         ]
                     },
-                    "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsMutationcreateReviewsauth0FunctionMutationcreateReviewsauth0FunctionAppSyncFunctionC36E4970FunctionId": {
+                    "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistMutationcreateWishlistauth0FunctionMutationcreateWishlistauth0FunctionAppSyncFunction51EC97B8FunctionId": {
                         "Fn::GetAtt": [
-                            "Reviews",
-                            "Outputs.transformerrootstackReviewsMutationcreateReviewsauth0FunctionMutationcreateReviewsauth0FunctionAppSyncFunctionC36E4970FunctionId"
+                            "Wishlist",
+                            "Outputs.transformerrootstackWishlistMutationcreateWishlistauth0FunctionMutationcreateWishlistauth0FunctionAppSyncFunction51EC97B8FunctionId"
                         ]
                     },
-                    "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsMutationupdateReviewsinit0FunctionMutationupdateReviewsinit0FunctionAppSyncFunctionCCEFC110FunctionId": {
+                    "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistMutationupdateWishlistinit0FunctionMutationupdateWishlistinit0FunctionAppSyncFunction1485D4D6FunctionId": {
                         "Fn::GetAtt": [
-                            "Reviews",
-                            "Outputs.transformerrootstackReviewsMutationupdateReviewsinit0FunctionMutationupdateReviewsinit0FunctionAppSyncFunctionCCEFC110FunctionId"
+                            "Wishlist",
+                            "Outputs.transformerrootstackWishlistMutationupdateWishlistinit0FunctionMutationupdateWishlistinit0FunctionAppSyncFunction1485D4D6FunctionId"
                         ]
                     },
-                    "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsSubscriptiononCreateReviewsauth0FunctionSubscriptiononCreateReviewsauth0FunctionAppSyncFunction5551DCDEFunctionId": {
+                    "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistSubscriptiononCreateWishlistauth0FunctionSubscriptiononCreateWishlistauth0FunctionAppSyncFunction41314B20FunctionId": {
                         "Fn::GetAtt": [
-                            "Reviews",
-                            "Outputs.transformerrootstackReviewsSubscriptiononCreateReviewsauth0FunctionSubscriptiononCreateReviewsauth0FunctionAppSyncFunction5551DCDEFunctionId"
+                            "Wishlist",
+                            "Outputs.transformerrootstackWishlistSubscriptiononCreateWishlistauth0FunctionSubscriptiononCreateWishlistauth0FunctionAppSyncFunction41314B20FunctionId"
                         ]
                     },
-                    "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsSubscriptionOnCreateReviewsDataResolverFnSubscriptionOnCreateReviewsDataResolverFnAppSyncFunction5363B579FunctionId": {
+                    "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistSubscriptionOnCreateWishlistDataResolverFnSubscriptionOnCreateWishlistDataResolverFnAppSyncFunctionDFBE86F5FunctionId": {
                         "Fn::GetAtt": [
-                            "Reviews",
-                            "Outputs.transformerrootstackReviewsSubscriptionOnCreateReviewsDataResolverFnSubscriptionOnCreateReviewsDataResolverFnAppSyncFunction5363B579FunctionId"
+                            "Wishlist",
+                            "Outputs.transformerrootstackWishlistSubscriptionOnCreateWishlistDataResolverFnSubscriptionOnCreateWishlistDataResolverFnAppSyncFunctionDFBE86F5FunctionId"
                         ]
                     }
                 }
@@ -611,6 +723,7 @@
             "DependsOn": [
                 "GraphQLAPI",
                 "GraphQLAPITransformerSchema3CB2AE18",
+                "Wishlist",
                 "Reviews",
                 "Products",
                 "ConnectionStack"

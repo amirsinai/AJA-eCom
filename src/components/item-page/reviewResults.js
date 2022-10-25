@@ -11,14 +11,18 @@ export default function ReviewResults(){
 
     useEffect(() => {
         async function applyData(){
-            const post = await DataStore.query(Reviews, c => c.productsID("eq", `${id}`))
-            setReviewData(post)
-            console.log("Results: ",post)
+            const SearchEndPoint = `https://qndk0sl6mi.execute-api.us-west-2.amazonaws.com/reviews`
+            const fetchData = async() => {
+                const response = await fetch(SearchEndPoint)
+                const resData = await response.json()
+                setReviewData(resData.Items)
+                console.log(reviewData)
+            }
+            fetchData()
         }
-        console.log("test")
         applyData()
     }, [])
-    console.log(id)
+
     const spreadReview = reviewData.map((item,index) => {
         async function deleteMe(){
             const locateItemToDelete = await DataStore.query(Reviews, `${item.id}`)
@@ -32,7 +36,6 @@ export default function ReviewResults(){
 
         return(
             <div style={ReviewStyle} key={index}>
-                <p>Work?</p>
                 <h4>{item.Rating}</h4>
                 <p>{item.Comment}</p>
                 <button onClick={deleteMe()}>Delete Post</button>

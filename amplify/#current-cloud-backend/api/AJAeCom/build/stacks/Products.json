@@ -49,10 +49,10 @@
     "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
       "Type": "String"
     },
-    "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsQuerygetReviewsauth0FunctionQuerygetReviewsauth0FunctionAppSyncFunctionE100A44BFunctionId": {
+    "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistQuerygetWishlistauth0FunctionQuerygetWishlistauth0FunctionAppSyncFunction43167F79FunctionId": {
       "Type": "String"
     },
-    "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsQuerygetReviewspostAuth0FunctionQuerygetReviewspostAuth0FunctionAppSyncFunction44C87776FunctionId": {
+    "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistQuerygetWishlistpostAuth0FunctionQuerygetWishlistpostAuth0FunctionAppSyncFunction7E980D4EFunctionId": {
       "Type": "String"
     },
     "referencetotransformerrootstackauthRoleNameFB872D50Ref": {
@@ -61,19 +61,19 @@
     "referencetotransformerrootstackunauthRoleName49F3C1FERef": {
       "Type": "String"
     },
-    "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsMutationcreateReviewsinit0FunctionMutationcreateReviewsinit0FunctionAppSyncFunction0F3B82B0FunctionId": {
+    "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistMutationcreateWishlistinit0FunctionMutationcreateWishlistinit0FunctionAppSyncFunction9B505D49FunctionId": {
       "Type": "String"
     },
-    "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsMutationcreateReviewsauth0FunctionMutationcreateReviewsauth0FunctionAppSyncFunctionC36E4970FunctionId": {
+    "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistMutationcreateWishlistauth0FunctionMutationcreateWishlistauth0FunctionAppSyncFunction51EC97B8FunctionId": {
       "Type": "String"
     },
-    "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsMutationupdateReviewsinit0FunctionMutationupdateReviewsinit0FunctionAppSyncFunctionCCEFC110FunctionId": {
+    "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistMutationupdateWishlistinit0FunctionMutationupdateWishlistinit0FunctionAppSyncFunction1485D4D6FunctionId": {
       "Type": "String"
     },
-    "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsSubscriptiononCreateReviewsauth0FunctionSubscriptiononCreateReviewsauth0FunctionAppSyncFunction5551DCDEFunctionId": {
+    "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistSubscriptiononCreateWishlistauth0FunctionSubscriptiononCreateWishlistauth0FunctionAppSyncFunction41314B20FunctionId": {
       "Type": "String"
     },
-    "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsSubscriptionOnCreateReviewsDataResolverFnSubscriptionOnCreateReviewsDataResolverFnAppSyncFunction5363B579FunctionId": {
+    "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistSubscriptionOnCreateWishlistDataResolverFnSubscriptionOnCreateWishlistDataResolverFnAppSyncFunctionDFBE86F5FunctionId": {
       "Type": "String"
     }
   },
@@ -510,10 +510,10 @@
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsQuerygetReviewsauth0FunctionQuerygetReviewsauth0FunctionAppSyncFunctionE100A44BFunctionId"
+              "Ref": "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistQuerygetWishlistauth0FunctionQuerygetWishlistauth0FunctionAppSyncFunction43167F79FunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsQuerygetReviewspostAuth0FunctionQuerygetReviewspostAuth0FunctionAppSyncFunction44C87776FunctionId"
+              "Ref": "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistQuerygetWishlistpostAuth0FunctionQuerygetWishlistpostAuth0FunctionAppSyncFunction7E980D4EFunctionId"
             },
             {
               "Fn::GetAtt": [
@@ -625,10 +625,10 @@
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsQuerygetReviewsauth0FunctionQuerygetReviewsauth0FunctionAppSyncFunctionE100A44BFunctionId"
+              "Ref": "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistQuerygetWishlistauth0FunctionQuerygetWishlistauth0FunctionAppSyncFunction43167F79FunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsQuerygetReviewspostAuth0FunctionQuerygetReviewspostAuth0FunctionAppSyncFunction44C87776FunctionId"
+              "Ref": "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistQuerygetWishlistpostAuth0FunctionQuerygetWishlistpostAuth0FunctionAppSyncFunction7E980D4EFunctionId"
             },
             {
               "Fn::GetAtt": [
@@ -740,10 +740,10 @@
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsQuerygetReviewsauth0FunctionQuerygetReviewsauth0FunctionAppSyncFunctionE100A44BFunctionId"
+              "Ref": "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistQuerygetWishlistauth0FunctionQuerygetWishlistauth0FunctionAppSyncFunction43167F79FunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsQuerygetReviewspostAuth0FunctionQuerygetReviewspostAuth0FunctionAppSyncFunction44C87776FunctionId"
+              "Ref": "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistQuerygetWishlistpostAuth0FunctionQuerygetWishlistpostAuth0FunctionAppSyncFunction7E980D4EFunctionId"
             },
             {
               "Fn::GetAtt": [
@@ -855,13 +855,13 @@
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsMutationcreateReviewsinit0FunctionMutationcreateReviewsinit0FunctionAppSyncFunction0F3B82B0FunctionId"
+              "Ref": "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistMutationcreateWishlistinit0FunctionMutationcreateWishlistinit0FunctionAppSyncFunction9B505D49FunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsMutationcreateReviewsauth0FunctionMutationcreateReviewsauth0FunctionAppSyncFunctionC36E4970FunctionId"
+              "Ref": "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistMutationcreateWishlistauth0FunctionMutationcreateWishlistauth0FunctionAppSyncFunction51EC97B8FunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsQuerygetReviewspostAuth0FunctionQuerygetReviewspostAuth0FunctionAppSyncFunction44C87776FunctionId"
+              "Ref": "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistQuerygetWishlistpostAuth0FunctionQuerygetWishlistpostAuth0FunctionAppSyncFunction7E980D4EFunctionId"
             },
             {
               "Fn::GetAtt": [
@@ -1024,7 +1024,7 @@
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsMutationupdateReviewsinit0FunctionMutationupdateReviewsinit0FunctionAppSyncFunctionCCEFC110FunctionId"
+              "Ref": "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistMutationupdateWishlistinit0FunctionMutationupdateWishlistinit0FunctionAppSyncFunction1485D4D6FunctionId"
             },
             {
               "Fn::GetAtt": [
@@ -1033,7 +1033,7 @@
               ]
             },
             {
-              "Ref": "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsQuerygetReviewspostAuth0FunctionQuerygetReviewspostAuth0FunctionAppSyncFunction44C87776FunctionId"
+              "Ref": "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistQuerygetWishlistpostAuth0FunctionQuerygetWishlistpostAuth0FunctionAppSyncFunction7E980D4EFunctionId"
             },
             {
               "Fn::GetAtt": [
@@ -1202,7 +1202,7 @@
               ]
             },
             {
-              "Ref": "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsQuerygetReviewspostAuth0FunctionQuerygetReviewspostAuth0FunctionAppSyncFunction44C87776FunctionId"
+              "Ref": "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistQuerygetWishlistpostAuth0FunctionQuerygetWishlistpostAuth0FunctionAppSyncFunction7E980D4EFunctionId"
             },
             {
               "Fn::GetAtt": [
@@ -1259,13 +1259,13 @@
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsSubscriptiononCreateReviewsauth0FunctionSubscriptiononCreateReviewsauth0FunctionAppSyncFunction5551DCDEFunctionId"
+              "Ref": "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistSubscriptiononCreateWishlistauth0FunctionSubscriptiononCreateWishlistauth0FunctionAppSyncFunction41314B20FunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsQuerygetReviewspostAuth0FunctionQuerygetReviewspostAuth0FunctionAppSyncFunction44C87776FunctionId"
+              "Ref": "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistQuerygetWishlistpostAuth0FunctionQuerygetWishlistpostAuth0FunctionAppSyncFunction7E980D4EFunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsSubscriptionOnCreateReviewsDataResolverFnSubscriptionOnCreateReviewsDataResolverFnAppSyncFunction5363B579FunctionId"
+              "Ref": "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistSubscriptionOnCreateWishlistDataResolverFnSubscriptionOnCreateWishlistDataResolverFnAppSyncFunctionDFBE86F5FunctionId"
             }
           ]
         },
@@ -1312,13 +1312,13 @@
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsSubscriptiononCreateReviewsauth0FunctionSubscriptiononCreateReviewsauth0FunctionAppSyncFunction5551DCDEFunctionId"
+              "Ref": "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistSubscriptiononCreateWishlistauth0FunctionSubscriptiononCreateWishlistauth0FunctionAppSyncFunction41314B20FunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsQuerygetReviewspostAuth0FunctionQuerygetReviewspostAuth0FunctionAppSyncFunction44C87776FunctionId"
+              "Ref": "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistQuerygetWishlistpostAuth0FunctionQuerygetWishlistpostAuth0FunctionAppSyncFunction7E980D4EFunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsSubscriptionOnCreateReviewsDataResolverFnSubscriptionOnCreateReviewsDataResolverFnAppSyncFunction5363B579FunctionId"
+              "Ref": "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistSubscriptionOnCreateWishlistDataResolverFnSubscriptionOnCreateWishlistDataResolverFnAppSyncFunctionDFBE86F5FunctionId"
             }
           ]
         },
@@ -1365,13 +1365,13 @@
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsSubscriptiononCreateReviewsauth0FunctionSubscriptiononCreateReviewsauth0FunctionAppSyncFunction5551DCDEFunctionId"
+              "Ref": "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistSubscriptiononCreateWishlistauth0FunctionSubscriptiononCreateWishlistauth0FunctionAppSyncFunction41314B20FunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsQuerygetReviewspostAuth0FunctionQuerygetReviewspostAuth0FunctionAppSyncFunction44C87776FunctionId"
+              "Ref": "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistQuerygetWishlistpostAuth0FunctionQuerygetWishlistpostAuth0FunctionAppSyncFunction7E980D4EFunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackReviewsNestedStackReviewsNestedStackResourceD66C51E4OutputstransformerrootstackReviewsSubscriptionOnCreateReviewsDataResolverFnSubscriptionOnCreateReviewsDataResolverFnAppSyncFunction5363B579FunctionId"
+              "Ref": "referencetotransformerrootstackWishlistNestedStackWishlistNestedStackResourceBE759C54OutputstransformerrootstackWishlistSubscriptionOnCreateWishlistDataResolverFnSubscriptionOnCreateWishlistDataResolverFnAppSyncFunctionDFBE86F5FunctionId"
             }
           ]
         },

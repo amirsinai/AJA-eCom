@@ -1,4 +1,14 @@
 
+type Wishlist @aws_iam @aws_api_key {
+  id: ID!
+  itemLink: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  _version: Int!
+  _deleted: Boolean
+  _lastChangedAt: AWSTimestamp!
+}
+
 type Reviews @aws_iam @aws_api_key {
   id: ID!
   productsID: ID!
@@ -18,6 +28,7 @@ type Products @aws_iam @aws_api_key {
   Image: String
   Price: Float!
   Reviews(filter: ModelReviewsFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelReviewsConnection
+  Rating: [AWSJSON]
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
   _version: Int!
@@ -175,6 +186,87 @@ enum ModelSortDirection {
   DESC
 }
 
+type ModelWishlistConnection @aws_api_key @aws_iam {
+  items: [Wishlist]!
+  nextToken: String
+  startedAt: AWSTimestamp
+}
+
+input ModelWishlistFilterInput {
+  id: ModelIDInput
+  itemLink: ModelStringInput
+  and: [ModelWishlistFilterInput]
+  or: [ModelWishlistFilterInput]
+  not: ModelWishlistFilterInput
+}
+
+type Query {
+  getWishlist(id: ID!): Wishlist @aws_api_key @aws_iam
+  listWishlists(filter: ModelWishlistFilterInput, limit: Int, nextToken: String): ModelWishlistConnection @aws_api_key @aws_iam
+  syncWishlists(filter: ModelWishlistFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelWishlistConnection @aws_api_key @aws_iam
+  getReviews(id: ID!): Reviews @aws_api_key @aws_iam
+  listReviews(filter: ModelReviewsFilterInput, limit: Int, nextToken: String): ModelReviewsConnection @aws_api_key @aws_iam
+  syncReviews(filter: ModelReviewsFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelReviewsConnection @aws_api_key @aws_iam
+  getProducts(id: ID!): Products @aws_api_key @aws_iam
+  listProducts(filter: ModelProductsFilterInput, limit: Int, nextToken: String): ModelProductsConnection @aws_api_key @aws_iam
+  syncProducts(filter: ModelProductsFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelProductsConnection @aws_api_key @aws_iam
+}
+
+input ModelWishlistConditionInput {
+  itemLink: ModelStringInput
+  and: [ModelWishlistConditionInput]
+  or: [ModelWishlistConditionInput]
+  not: ModelWishlistConditionInput
+}
+
+input CreateWishlistInput {
+  id: ID
+  itemLink: String
+  _version: Int
+}
+
+input UpdateWishlistInput {
+  id: ID!
+  itemLink: String
+  _version: Int
+}
+
+input DeleteWishlistInput {
+  id: ID!
+  _version: Int
+}
+
+type Mutation {
+  createWishlist(input: CreateWishlistInput!, condition: ModelWishlistConditionInput): Wishlist @aws_api_key @aws_iam
+  updateWishlist(input: UpdateWishlistInput!, condition: ModelWishlistConditionInput): Wishlist @aws_api_key @aws_iam
+  deleteWishlist(input: DeleteWishlistInput!, condition: ModelWishlistConditionInput): Wishlist @aws_api_key @aws_iam
+  createReviews(input: CreateReviewsInput!, condition: ModelReviewsConditionInput): Reviews @aws_api_key @aws_iam
+  updateReviews(input: UpdateReviewsInput!, condition: ModelReviewsConditionInput): Reviews @aws_api_key @aws_iam
+  deleteReviews(input: DeleteReviewsInput!, condition: ModelReviewsConditionInput): Reviews @aws_api_key @aws_iam
+  createProducts(input: CreateProductsInput!, condition: ModelProductsConditionInput): Products @aws_api_key @aws_iam
+  updateProducts(input: UpdateProductsInput!, condition: ModelProductsConditionInput): Products @aws_api_key @aws_iam
+  deleteProducts(input: DeleteProductsInput!, condition: ModelProductsConditionInput): Products @aws_api_key @aws_iam
+}
+
+input ModelSubscriptionWishlistFilterInput {
+  id: ModelSubscriptionIDInput
+  itemLink: ModelSubscriptionStringInput
+  and: [ModelSubscriptionWishlistFilterInput]
+  or: [ModelSubscriptionWishlistFilterInput]
+}
+
+type Subscription {
+  onCreateWishlist(filter: ModelSubscriptionWishlistFilterInput): Wishlist @aws_subscribe(mutations: ["createWishlist"]) @aws_api_key @aws_iam
+  onUpdateWishlist(filter: ModelSubscriptionWishlistFilterInput): Wishlist @aws_subscribe(mutations: ["updateWishlist"]) @aws_api_key @aws_iam
+  onDeleteWishlist(filter: ModelSubscriptionWishlistFilterInput): Wishlist @aws_subscribe(mutations: ["deleteWishlist"]) @aws_api_key @aws_iam
+  onCreateReviews(filter: ModelSubscriptionReviewsFilterInput): Reviews @aws_subscribe(mutations: ["createReviews"]) @aws_api_key @aws_iam
+  onUpdateReviews(filter: ModelSubscriptionReviewsFilterInput): Reviews @aws_subscribe(mutations: ["updateReviews"]) @aws_api_key @aws_iam
+  onDeleteReviews(filter: ModelSubscriptionReviewsFilterInput): Reviews @aws_subscribe(mutations: ["deleteReviews"]) @aws_api_key @aws_iam
+  onCreateProducts(filter: ModelSubscriptionProductsFilterInput): Products @aws_subscribe(mutations: ["createProducts"]) @aws_api_key @aws_iam
+  onUpdateProducts(filter: ModelSubscriptionProductsFilterInput): Products @aws_subscribe(mutations: ["updateProducts"]) @aws_api_key @aws_iam
+  onDeleteProducts(filter: ModelSubscriptionProductsFilterInput): Products @aws_subscribe(mutations: ["deleteProducts"]) @aws_api_key @aws_iam
+}
+
 type ModelReviewsConnection @aws_api_key @aws_iam {
   items: [Reviews]!
   nextToken: String
@@ -189,15 +281,6 @@ input ModelReviewsFilterInput {
   and: [ModelReviewsFilterInput]
   or: [ModelReviewsFilterInput]
   not: ModelReviewsFilterInput
-}
-
-type Query {
-  getReviews(id: ID!): Reviews @aws_api_key @aws_iam
-  listReviews(filter: ModelReviewsFilterInput, limit: Int, nextToken: String): ModelReviewsConnection @aws_api_key @aws_iam
-  syncReviews(filter: ModelReviewsFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelReviewsConnection @aws_api_key @aws_iam
-  getProducts(id: ID!): Products @aws_api_key @aws_iam
-  listProducts(filter: ModelProductsFilterInput, limit: Int, nextToken: String): ModelProductsConnection @aws_api_key @aws_iam
-  syncProducts(filter: ModelProductsFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelProductsConnection @aws_api_key @aws_iam
 }
 
 input ModelReviewsConditionInput {
@@ -230,22 +313,13 @@ input DeleteReviewsInput {
   _version: Int
 }
 
-type Mutation {
-  createReviews(input: CreateReviewsInput!, condition: ModelReviewsConditionInput): Reviews @aws_api_key @aws_iam
-  updateReviews(input: UpdateReviewsInput!, condition: ModelReviewsConditionInput): Reviews @aws_api_key @aws_iam
-  deleteReviews(input: DeleteReviewsInput!, condition: ModelReviewsConditionInput): Reviews @aws_api_key @aws_iam
-  createProducts(input: CreateProductsInput!, condition: ModelProductsConditionInput): Products @aws_api_key @aws_iam
-  updateProducts(input: UpdateProductsInput!, condition: ModelProductsConditionInput): Products @aws_api_key @aws_iam
-  deleteProducts(input: DeleteProductsInput!, condition: ModelProductsConditionInput): Products @aws_api_key @aws_iam
-}
-
-type Subscription {
-  onCreateReviews: Reviews @aws_subscribe(mutations: ["createReviews"]) @aws_api_key @aws_iam
-  onUpdateReviews: Reviews @aws_subscribe(mutations: ["updateReviews"]) @aws_api_key @aws_iam
-  onDeleteReviews: Reviews @aws_subscribe(mutations: ["deleteReviews"]) @aws_api_key @aws_iam
-  onCreateProducts: Products @aws_subscribe(mutations: ["createProducts"]) @aws_api_key @aws_iam
-  onUpdateProducts: Products @aws_subscribe(mutations: ["updateProducts"]) @aws_api_key @aws_iam
-  onDeleteProducts: Products @aws_subscribe(mutations: ["deleteProducts"]) @aws_api_key @aws_iam
+input ModelSubscriptionReviewsFilterInput {
+  id: ModelSubscriptionIDInput
+  productsID: ModelSubscriptionIDInput
+  Rating: ModelSubscriptionFloatInput
+  Comment: ModelSubscriptionStringInput
+  and: [ModelSubscriptionReviewsFilterInput]
+  or: [ModelSubscriptionReviewsFilterInput]
 }
 
 type ModelProductsConnection @aws_api_key @aws_iam {
@@ -260,6 +334,7 @@ input ModelProductsFilterInput {
   Desc: ModelStringInput
   Image: ModelStringInput
   Price: ModelFloatInput
+  Rating: ModelStringInput
   and: [ModelProductsFilterInput]
   or: [ModelProductsFilterInput]
   not: ModelProductsFilterInput
@@ -270,6 +345,7 @@ input ModelProductsConditionInput {
   Desc: ModelStringInput
   Image: ModelStringInput
   Price: ModelFloatInput
+  Rating: ModelStringInput
   and: [ModelProductsConditionInput]
   or: [ModelProductsConditionInput]
   not: ModelProductsConditionInput
@@ -281,6 +357,7 @@ input CreateProductsInput {
   Desc: String!
   Image: String
   Price: Float!
+  Rating: [AWSJSON]
   _version: Int
 }
 
@@ -290,11 +367,23 @@ input UpdateProductsInput {
   Desc: String
   Image: String
   Price: Float
+  Rating: [AWSJSON]
   _version: Int
 }
 
 input DeleteProductsInput {
   id: ID!
   _version: Int
+}
+
+input ModelSubscriptionProductsFilterInput {
+  id: ModelSubscriptionIDInput
+  Name: ModelSubscriptionStringInput
+  Desc: ModelSubscriptionStringInput
+  Image: ModelSubscriptionStringInput
+  Price: ModelSubscriptionFloatInput
+  Rating: ModelSubscriptionStringInput
+  and: [ModelSubscriptionProductsFilterInput]
+  or: [ModelSubscriptionProductsFilterInput]
 }
 
