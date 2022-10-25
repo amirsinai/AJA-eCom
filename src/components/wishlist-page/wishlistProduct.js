@@ -20,7 +20,9 @@ const WishlistProductStyling = ({item, index}) => {
     return (
       <div key={index}>
         <img src={productData.Image} alt={`${productData.Name}`}></img>
-        <h2>{productData.Name}</h2>
+        <a href={productData.id}>
+          <h2>{productData.Name}</h2>
+        </a>
         <p>{productData.Price}</p>
       </div>
     )

@@ -97,6 +97,7 @@ const Button = styled.button`
 const ProductItemPagestyling = () => {
     const { id } = useParams()
     const [productData, setProductData] = useState([])
+    const [wishListState, setWishListState] = useState(false)
 
     useEffect(() => {
         const SearchEndPoint = `https://qndk0sl6mi.execute-api.us-west-2.amazonaws.com/items/${id}`
@@ -122,6 +123,7 @@ const ProductItemPagestyling = () => {
     const handleSubmit = e =>{
         e.preventDefault()
         addToWishlist()
+        setWishListState(true)
     }
     
     const [quantity, setQuantity] = useState(1);
@@ -151,7 +153,13 @@ const ProductItemPagestyling = () => {
                             <Amount>{quantity}</Amount>
                             <Add onClick={()=>handleQuantity("inc")}/>
                         </AmountContainer>
-                        <Button onClick={handleSubmit}>ADD TO WISHLIST</Button>
+                        {wishListState ? 
+                        <div>This item is added to your wishlist!</div>
+                        :
+                        <div>
+                            <Button onClick={handleSubmit}>ADD TO WISHLIST</Button>
+                        </div>
+                        }
                     </AddContainer>
                 </InfoContainer>
             </Wrapper>
