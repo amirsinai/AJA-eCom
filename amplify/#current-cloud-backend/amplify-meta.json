@@ -36,12 +36,12 @@
         "GraphQLAPIEndpointOutput": "https://iffqpkku3zgobnoon6txpmk4ma.appsync-api.us-west-2.amazonaws.com/graphql",
         "GraphQLAPIKeyOutput": "da2-ntdtcadpazaqnik3wj2wou2glm"
       },
-      "lastPushTimeStamp": "2022-10-22T08:39:10.342Z",
+      "lastPushTimeStamp": "2022-10-25T03:00:59.182Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify5902924e08374-staging-172818-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apiAJAeCom"
       },
-      "lastPushDirHash": "P5D8uYPZvqFyCy/13n4eUZm8WGc="
+      "lastPushDirHash": "pwqapJYpDcSmpKMWFujwRJlsSTU="
     }
   },
   "auth": {
@@ -79,7 +79,7 @@
         "IdentityPoolName": "ajaecom42c5eeb2_identitypool_42c5eeb2__staging",
         "UserPoolName": "ajaecom42c5eeb2_userpool_42c5eeb2"
       },
-      "lastPushTimeStamp": "2022-10-22T08:39:10.021Z",
+      "lastPushTimeStamp": "2022-10-25T03:00:59.126Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify5902924e08374-staging-172818-deployment/amplify-cfn-templates/auth/ajaecom42c5eeb2-cloudformation-template.json",
         "logicalId": "authajaecom42c5eeb2"

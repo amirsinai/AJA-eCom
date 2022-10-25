@@ -1,3 +1,8 @@
+type Wishlist @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  itemLink: String
+}
+
 type Reviews @model @auth(rules: [{allow: public, operations: [create, update, read]}]) {
   id: ID!
   productsID: ID! @index(name: "byProducts")
@@ -12,5 +17,6 @@ type Products @model @auth(rules: [{allow: public}]) {
   Image: String
   Price: Float!
   Reviews: [Reviews] @hasMany(indexName: "byProducts", fields: ["id"])
+  Rating: [AWSJSON]
 }
  

@@ -8,6 +8,7 @@ import { DataStore } from "aws-amplify"
 import CreateReview from "./item-page/createReview"
 import ReviewResults from "./item-page/reviewResults"
 
+import { Wishlist} from "../models"
 const Container = styled.div``;
 const Wrapper = styled.section`
     padding: 50px;
@@ -50,15 +51,33 @@ const Button = styled.button``;
 
 const ProductItemPagestyling = () => {
     const { id } = useParams()
-    const[ productData, setProductData] = useState([])
+    const [productData, setProductData] = useState([])
 
     useEffect(() => {
+        const SearchEndPoint = `https://qndk0sl6mi.execute-api.us-west-2.amazonaws.com/items/${id}`
         const fetchData = async() => {
-            const products = await DataStore.query(Products, id)
-            setProductData(products)
+            const response = await fetch(SearchEndPoint)
+            const resData = await response.json()
+            setProductData(resData.Item)
         }
         fetchData()
     }, [])
+
+    
+    async function addToWishlist(){
+        console.log(id)
+        console.log(productData.id)
+        await DataStore.save(
+            new Wishlist({
+                "itemLink" : productData.id
+            })
+        )
+    }
+
+    const handleSubmit = e =>{
+        e.preventDefault()
+        addToWishlist()
+    }
   return (
     <div>
         <Container>
@@ -76,7 +95,7 @@ const ProductItemPagestyling = () => {
                             <Amount>1</Amount>
                             <Add />
                         </AmountContainer>
-                        <Button>ADD TO WISHLIST</Button>
+                        <Button onClick={handleSubmit}>ADD TO WISHLIST</Button>
                     </AddContainer>
                 </InfoContainer>
             </Wrapper>
@@ -84,7 +103,7 @@ const ProductItemPagestyling = () => {
         <div>
             <h2>Reviews</h2>
             <CreateReview value={productData.id}/>
-            <ReviewResults value={productData.id}/>
+            <ReviewResults />
         </div>
     </div>
   )
