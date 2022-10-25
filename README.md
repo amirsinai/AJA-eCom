@@ -36,3 +36,16 @@ The shopping page shows products images and title, on hover, product can be adde
 
         -Amir
  "learning to work with AWS is existing, I was in charge of creating and setting up the main github repo and AWS account, added the model tables, contents(products, images, links) and relationship, created the graphical logo AJA (Angelo, Jonathan, Amir) and working on search bar to return products based on keyword or a product name"
+
+
+## Issues
+
+- Authorization is not fully Implemented. But you can create and login your account, unfortunately you can only navigate to the pages if you have the link(/createUse & /login)
+
+- Every item have the same reviews.
+
+- Everyone has the same wishlist and you can add as many of the same items in the wishlist.
+
+- Searchbar is not functioning/implemented.
+
+- Subscribe to Newspaper and Footer are nonfunctional(there for design)
